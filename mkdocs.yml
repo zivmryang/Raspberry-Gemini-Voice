@@ -1,0 +1,57 @@
+site_name: Raspberry Gemini Voice
+site_description: 基于树莓派的语音交互系统
+site_author: Your Name
+repo_url: https://github.com/yourusername/raspberry-gemini-voice
+repo_name: raspberry-gemini-voice
+
+theme:
+  name: material
+  features:
+    - navigation.tabs
+    - navigation.indexes
+    - toc.integrate
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: blue
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+
+nav:
+  - 首页: index.md
+  - 快速开始:
+    - 安装: getting-started/installation.md
+    - 配置: getting-started/configuration.md
+  - 架构设计:
+    - 系统架构: architecture/overview.md
+    - 语音识别: architecture/speech-recognition.md
+    - 文本转语音: architecture/text-to-speech.md
+  - API 参考:
+    - 客户端: api/client.md
+    - 配置验证: api/config-validator.md
+    - 工具类: api/utils.md
+  - 贡献指南: contributing.md
+  - 常见问题: faq.md
+
+markdown_extensions:
+  - admonition
+  - codehilite
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tabbed
+  - pymdownx.emoji
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/raspberry-gemini-voice

@@ -1,0 +1,59 @@
+# Raspberry Pi Voice Assistant Project Structure
+
+## Directory Structure
+raspberry-gemini-voice/
+├── config/
+│   └── settings.py          # Configuration settings
+├── src/
+│   ├── api_client/          # API communication module
+│   │   └── client.py        # Gemini API client
+│   ├── speech_recognition/  # Speech recognition module
+│   │   └── recognizer.py    # Vosk speech recognizer
+│   ├── text_to_speech/      # Text-to-speech module
+│   │   └── synthesizer.py   # eSpeak text-to-speech
+│   └── main.py              # Main application entry point
+├── requirements.txt         # Python dependencies
+├── setup.py                 # Package installation configuration
+└── project_structure.txt    # This file
+
+## Module Descriptions
+
+### API Client (api_client/client.py)
+- Handles communication with Gemini API via Cloudflare Workers
+- Implements request caching using SQLite
+- Manages API authentication and error handling
+
+### Speech Recognition (speech_recognition/recognizer.py)
+- Uses Vosk for offline speech recognition
+- Handles microphone input and audio processing
+- Provides real-time speech-to-text conversion
+
+### Text-to-Speech (text_to_speech/synthesizer.py)
+- Uses eSpeak for text-to-speech synthesis
+- Manages speech playback and audio output
+- Supports voice, speed and pitch customization
+
+### Main Application (main.py)
+- Initializes and coordinates all modules
+- Implements main interaction loop
+- Handles graceful shutdown
+
+## Key Configuration Parameters (config/settings.py)
+- CLOUDFLARE: Cloudflare Worker URL and API key
+- GEMINI: API parameters (max tokens, temperature)
+- TTS: Text-to-speech settings (voice, speed, pitch)
+- CACHE: Cache settings (max entries, database path)
+
+## Setup Instructions
+1. Install system dependencies:
+   - espeak
+   - aplay
+   - python3-pyaudio
+
+2. Install the package:
+   pip install .
+
+3. Configure settings in config/settings.py
+
+4. Run the application:
+   raspberry-gemini-voice
